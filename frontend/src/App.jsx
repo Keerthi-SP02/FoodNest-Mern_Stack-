@@ -1,0 +1,37 @@
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Courses from "./pages/Courses";
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Layout from "./components/Layout";
+import Dashboard from "./pages/Dashboard.jsx";
+import LandingPage from "./pages/LandingPage";
+import Profile from "./pages/Profile.jsx";
+import "./App.css";
+function App(){
+  return(
+   <BrowserRouter>
+   
+   <Routes>
+  <Route path="/" element={<LandingPage />} />
+  <Route path="/register" element={<Register />} />
+  <Route path="/login" element={<Login />} />
+
+  <Route element={<Layout />}>
+    <Route path="/Home" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/courses" element={<Courses />} />
+    <Route path="/profile" element={<Profile/>}/>
+  
+  </Route>    
+
+</Routes>
+
+    </BrowserRouter>
+  );
+   
+}
+export default App;
